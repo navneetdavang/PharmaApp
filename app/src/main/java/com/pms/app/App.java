@@ -20,7 +20,7 @@ public class App extends Application {
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
 		
-		Parent root = FXMLLoader.load(App.class.getResource("primary.fxml"));
+		Parent root = FXMLLoader.load(App.class.getResource("Pharmacy Management System.fxml.fxml"));
 		
 		Scene scene = new Scene(root);
 		stage.setResizable(false);
