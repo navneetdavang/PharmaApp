@@ -1,4 +1,4 @@
-package com.pms.app;
+package application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +20,12 @@ public class App extends Application {
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
 		
-		Parent root = FXMLLoader.load(getClass().getResource("fxmls/Pharmacy Management System.fxml"));
+		Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Pharmacy Management System.fxml"));
 		
 		Scene scene = new Scene(root);
 		stage.setResizable(false);
 		stage.setScene(scene);
+		stage.setTitle("Medicore");
 		stage.show();
 	}
 	

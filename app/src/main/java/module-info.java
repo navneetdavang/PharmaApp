@@ -2,7 +2,11 @@ module com.pms.app {
 	requires transitive javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
+	requires javafx.base;
 
-    opens com.pms.app to javafx.fxml;
-    exports com.pms.app;
+    opens application to javafx.fxml;
+    opens system.controllers to javafx.fxml;
+
+    
+    exports application;
 }
