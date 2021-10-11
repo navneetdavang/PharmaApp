@@ -23,9 +23,9 @@ public class App extends Application {
 		Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Pharmacy Management System.fxml"));
 		
 		Scene scene = new Scene(root);
-		stage.setResizable(false);
+		stage.setResizable(false);	// preventing full screen
 		stage.setScene(scene);
-		stage.setTitle("Medicore");
+		stage.setTitle("Medicore");	// setting the title
 		stage.show();
 	}
 	

@@ -6,7 +6,6 @@ module com.pms.app {
 
     opens application to javafx.fxml;
     opens system.controllers to javafx.fxml;
-
     
     exports application;
 }
