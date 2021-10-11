@@ -3,6 +3,7 @@ module com.pms.app {
     requires javafx.controls;
     requires javafx.fxml;
 	requires javafx.base;
+	requires java.sql;
 
     opens application to javafx.fxml;
     opens system.controllers to javafx.fxml;
