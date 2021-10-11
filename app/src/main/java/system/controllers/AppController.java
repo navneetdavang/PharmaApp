@@ -1,6 +1,7 @@
 package system.controllers;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import application.App;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import system.jdbc.ConnectionManager;
 
 public class AppController {
 	

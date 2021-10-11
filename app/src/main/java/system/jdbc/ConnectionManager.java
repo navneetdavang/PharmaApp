@@ -28,6 +28,7 @@ public class ConnectionManager {
 					USERNAME,
 					PASSWORD);  
 			
+			System.out.println("Successfully Connected to JDBC");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
