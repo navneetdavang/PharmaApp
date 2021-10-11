@@ -29,6 +29,7 @@ public class CustomerLoginController {
 		
 		Stage stage = new Stage();
 		stage.setScene(scene);
+		stage.setResizable(false);
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setTitle("Customer Registration");
 		stage.show();

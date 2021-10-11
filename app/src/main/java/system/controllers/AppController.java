@@ -30,6 +30,7 @@ public class AppController {
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setResizable(false);
 		stage.setTitle("Customer Login");
 		stage.show();
 	}
