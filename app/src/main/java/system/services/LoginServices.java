@@ -45,7 +45,7 @@ public class LoginServices {
 	
 	
 	
-	public static Customer customerLoginService(String first_name, String last_name, String contact_no, String email_id, String password) {
+	public static Customer customerLoginService(String email_id, String password) {
 		Customer customer = null;
 		
 		Connection con = ConnectionManager.getConnection();
@@ -61,9 +61,6 @@ public class LoginServices {
 			
 			if(rs != null) {
 				customer = new Customer(
-						rs.getString("first_name"),
-						rs.getString("last_name"),
-						rs.getString("contact_no"),
 						rs.getString("email_id"),
 						rs.getString("password"));
 			}
