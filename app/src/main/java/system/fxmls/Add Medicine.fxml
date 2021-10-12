@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:controller="system.controllers.AddMedicineController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="52.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Medicine" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField id="medicine_name" fx:id="medicine_name" layoutX="52.0" layoutY="126.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter Medicine Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="add_btn" onAction="#onClickAdd" layoutX="52.0" layoutY="319.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Add">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="52.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="138.291015625" />
+      <Text layoutX="52.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:" />
+      <Button fx:id="clear_fields_btn" onAction="#onClickClearFields" layoutX="152.0" layoutY="319.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Clear">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="52.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+      <TextField id="medicine_quantity" fx:id="medicine_quantity" layoutX="52.0" layoutY="193.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter the Stock">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField id="medicine_price" fx:id="medicine_price" layoutX="52.0" layoutY="257.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter the Price">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

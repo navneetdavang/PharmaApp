@@ -10,7 +10,7 @@
 
 <AnchorPane fx:controller="system.controllers.ChemistLoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <PasswordField id="password" fx:id="password_field" layoutX="43.0" layoutY="200.0" prefHeight="25.0" prefWidth="224.0">
+      <PasswordField id="password" fx:id="password_field" layoutX="43.0" layoutY="200.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter your password">
          <font>
             <Font size="15.0" />
          </font>
@@ -20,7 +20,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField id="username" fx:id="username_field" layoutX="43.0" layoutY="133.0" prefHeight="25.0" prefWidth="224.0">
+      <TextField id="username" fx:id="username_field" layoutX="43.0" layoutY="133.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter your username">
          <font>
             <Font size="15.0" />
          </font>

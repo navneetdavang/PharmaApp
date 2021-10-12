@@ -1,7 +1,5 @@
 package system.controllers;
 
-import java.io.IOException;
-
 import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -18,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import system.beans.Chemist;
 import system.services.LoginServices;
+import system.utils.AlertUtils;
 
 public class ChemistLoginController {
 	
@@ -37,8 +35,8 @@ public class ChemistLoginController {
 	// to claer the all fields in the login form
 	@FXML 
 	public void clearTextField(ActionEvent e) {
-		username_field.clear();
-		password_field.clear();
+		this.username_field.clear();
+		this.password_field.clear();
 	}
 	
 	@FXML 
@@ -48,15 +46,16 @@ public class ChemistLoginController {
 		String password = password_field.getText().trim();
 		
 		if(username.equals("") || password.equals("")) {
-			showAlert("Please Fill all the Details", AlertType.WARNING).show();
+			AlertUtils.showAlert("Please Fill all the Details", AlertType.WARNING).show();
 		}else {
 			Chemist chemist = LoginServices.chemistLoginService(username, password);
 			
 			if(chemist == null)
-				showAlert("Please enter valid Username & Password", AlertType.ERROR).show();
+				AlertUtils.showAlert("Please enter valid Username & Password", AlertType.ERROR).show();
 			else {
 				
-				if(showAlert("Login Successfully:)", AlertType.INFORMATION).showAndWait().get() == ButtonType.OK) {;
+				if(AlertUtils.showAlert("Login Successfully:)", AlertType.INFORMATION).
+						showAndWait().get() == ButtonType.OK) {;
 					Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 					loadChemistDashboard(stage);
 				}
@@ -85,15 +84,7 @@ public class ChemistLoginController {
 		}
 		
 	}
-	
-	// method to show alert 
-	public Alert showAlert(String msg, AlertType type) {
-		Alert alert = new Alert(type);
-		alert.setHeaderText(msg);
-		alert.setContentText(msg);
-		return alert;
-	}
-	
+
 	
 	
 

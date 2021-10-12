@@ -9,32 +9,32 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="fname_field" accessibleHelp="First Name" cache="true" layoutX="32.0" layoutY="111.0" prefHeight="26.0" prefWidth="257.0">
+      <TextField fx:id="fname_field" accessibleHelp="First Name" cache="true" layoutX="32.0" layoutY="111.0" prefHeight="26.0" prefWidth="257.0" promptText="Enter First Name">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="contact_field" layoutX="32.0" layoutY="170.0" prefHeight="26.0" prefWidth="257.0">
+      <TextField fx:id="contact_field" layoutX="32.0" layoutY="170.0" prefHeight="26.0" prefWidth="257.0" promptText="Enter your contact no.">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="password_field" layoutX="32.0" layoutY="238.0" prefHeight="26.0" prefWidth="257.0">
+      <PasswordField fx:id="password_field" layoutX="32.0" layoutY="238.0" prefHeight="26.0" prefWidth="257.0" promptText="Enter your password">
          <font>
             <Font size="15.0" />
          </font>
       </PasswordField>
-      <TextField fx:id="lname_field" layoutX="410.0" layoutY="111.0" prefHeight="26.0" prefWidth="257.0">
+      <TextField fx:id="lname_field" layoutX="410.0" layoutY="111.0" prefHeight="26.0" prefWidth="257.0" promptText="Enter Last Name">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="email_field" layoutX="410.0" layoutY="170.0" prefHeight="26.0" prefWidth="257.0">
+      <TextField fx:id="email_field" layoutX="410.0" layoutY="170.0" prefHeight="26.0" prefWidth="257.0" promptText="Enter the Email ID">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="cpassword_field" layoutX="410.0" layoutY="238.0" prefHeight="26.0" prefWidth="257.0">
+      <PasswordField fx:id="cpassword_field" layoutX="410.0" layoutY="238.0" prefHeight="26.0" prefWidth="257.0" promptText="Retype your password">
          <font>
             <Font size="15.0" />
          </font>

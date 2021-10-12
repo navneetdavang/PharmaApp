@@ -8,17 +8,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import system.beans.Chemist;
 import system.beans.Customer;
 import system.services.LoginServices;
+import system.utils.AlertUtils;
 
 public class CustomerLoginController {
 
@@ -52,14 +51,14 @@ public class CustomerLoginController {
 		String password = password_field.getText().trim();
 		
 		if(username.equals("") || password.equals("")) {
-			showAlert("Please Fill all the Details", AlertType.WARNING);
+			AlertUtils.showAlert("Please Fill all the Details", AlertType.WARNING).show();
 		}else {
 			Customer customer = LoginServices.customerLoginService(username, password);
 			
 			if(customer == null)
-				showAlert("Please Enter Valid Username/Email & Password", AlertType.ERROR);
+				AlertUtils.showAlert("Please Enter Valid Username/Email & Password", AlertType.ERROR).show();
 			else {
-				showAlert("Login Successfully:)", AlertType.INFORMATION);
+				AlertUtils.showAlert("Login Successfully:)", AlertType.INFORMATION).show();
 				Stage stage = (Stage) login_btn.getScene().getWindow();
 				stage.close();
 			}
@@ -82,10 +81,4 @@ public class CustomerLoginController {
 		stage.show();
 	}
 	
-	public void showAlert(String msg, AlertType type) {
-		Alert alert = new Alert(type);
-		alert.setHeaderText(msg);
-		alert.setContentText(msg);
-		alert.show();
-	}
 }
