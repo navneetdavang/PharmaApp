@@ -26,6 +26,9 @@ public class CustomerLoginController {
 	private Button login_clear_btn;
 	
 	@FXML
+	private Hyperlink register_page_hyperlink;
+	
+	@FXML
 	private Button login_btn;
 	
 	@FXML 
@@ -54,7 +57,7 @@ public class CustomerLoginController {
 			Customer customer = LoginServices.customerLoginService(username, password);
 			
 			if(customer == null)
-				showAlert("Please enter valid username & password", AlertType.ERROR);
+				showAlert("Please Enter Valid Username/Email & Password", AlertType.ERROR);
 			else {
 				showAlert("Login Successfully:)", AlertType.INFORMATION);
 				Stage stage = (Stage) login_btn.getScene().getWindow();
@@ -64,8 +67,24 @@ public class CustomerLoginController {
 		
 	}
 	
+	@FXML 
+	public void onClickRegisterHyperlink(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Customer Registration.fxml"));
+		
+		Scene scene = new Scene(root);
+		
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.initModality(Modality.APPLICATION_MODAL);
+	
+		stage.setResizable(false);
+		stage.setTitle("Chemist Login");
+		stage.show();
+	}
+	
 	public void showAlert(String msg, AlertType type) {
 		Alert alert = new Alert(type);
+		alert.setHeaderText(msg);
 		alert.setContentText(msg);
 		alert.show();
 	}

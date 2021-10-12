@@ -70,7 +70,7 @@ public class LoginServices {
 		} catch (SQLException e) {
 			//  TODO Auto-generated catch block
 			//	e.printStackTrace();
-			System.out.println("Error : Chemist Loign Services");
+			System.out.println("Error : Customer Loign Services");
 		}
 		
 		return customer;

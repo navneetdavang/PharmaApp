@@ -1,10 +1,18 @@
 package system.controllers;
 
+import java.io.IOException;
+
+import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -40,29 +48,53 @@ public class ChemistLoginController {
 		String password = password_field.getText().trim();
 		
 		if(username.equals("") || password.equals("")) {
-			showAlert("Please Fill all the Details", AlertType.WARNING);
+			showAlert("Please Fill all the Details", AlertType.WARNING).show();
 		}else {
 			Chemist chemist = LoginServices.chemistLoginService(username, password);
 			
 			if(chemist == null)
-				showAlert("Please enter valid username & password", AlertType.ERROR);
+				showAlert("Please enter valid Username & Password", AlertType.ERROR).show();
 			else {
-				showAlert("Login Successfully:)", AlertType.INFORMATION);
-				Stage stage = (Stage) login_btn.getScene().getWindow();
-				stage.close();
+				
+				if(showAlert("Login Successfully:)", AlertType.INFORMATION).showAndWait().get() == ButtonType.OK) {;
+					Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+					loadChemistDashboard(stage);
+				}
+				
+				  
 			}
+		}	
+	}
+	
+	// method to load the chemist dashboard
+	public void loadChemistDashboard(Stage stage) {
+		
+		try {
+			Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Chemist Dashboard.fxml"));
+			
+			Scene scene = new Scene(root);
+			
+			stage.setScene(scene);
+			stage.setTitle("Medicore");
+			stage.setResizable(false);
+			stage.show();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Error while loading the Chemist Dashboard");
 		}
-		
-
-		
 		
 	}
 	
-	public void showAlert(String msg, AlertType type) {
+	// method to show alert 
+	public Alert showAlert(String msg, AlertType type) {
 		Alert alert = new Alert(type);
+		alert.setHeaderText(msg);
 		alert.setContentText(msg);
-		alert.show();
+		return alert;
 	}
+	
+	
 	
 
 }

@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -32,28 +33,43 @@ public class AppController {
 		
 		Scene scene = new Scene(root);
 		
-		Stage stage = new Stage();
+		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		
 		stage.setScene(scene);
-		stage.initModality(Modality.APPLICATION_MODAL);
+//		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setResizable(false);
 		stage.setTitle("Customer Login");
+		
 		stage.show();
+		
 	}
 	
 	@FXML 
 	public void onClickChemist(ActionEvent e) throws IOException {
-		
+		System.out.println("Clicked Chemist Button");
+		 	
+		//initializing new window as modal
 		Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Chemist Login.fxml"));
-		
+	
 		Scene scene = new Scene(root);
 		
-		Stage stage = new Stage();
+		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		
 		stage.setScene(scene);
-		stage.initModality(Modality.APPLICATION_MODAL);
+//		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setResizable(false);
 		stage.setTitle("Chemist Login");
+		
+	
 		stage.show();
+
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
