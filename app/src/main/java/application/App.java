@@ -31,5 +31,7 @@ public class App extends Application {
 		stage.setTitle("Medicore");	// setting the title
 		stage.show();
 	}
+	
+
 
 }

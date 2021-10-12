@@ -8,7 +8,7 @@
 
 <Pane fx:id="home_pane" maxHeight="400.0" maxWidth="700.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controllers.AppController">
    <children>
-      <Button fx:id="chemist_btn" layoutX="82.0" layoutY="138.0" mnemonicParsing="false" prefHeight="175.0" prefWidth="200.0" text="Chemist">
+      <Button fx:id="chemist_btn" layoutX="82.0" layoutY="138.0" mnemonicParsing="false" onAction="#onClickChemist" prefHeight="175.0" prefWidth="200.0" text="Chemist">
          <font>
             <Font size="18.0" />
          </font></Button>

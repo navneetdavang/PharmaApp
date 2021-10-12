@@ -19,6 +19,9 @@ public class AppController {
 	
 	@FXML
 	private Button customer_btn;
+
+	@FXML
+	private Button chemist_btn;
 	
 	@FXML
 	public void onClickCustomer(ActionEvent e) throws IOException {
@@ -34,6 +37,21 @@ public class AppController {
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setResizable(false);
 		stage.setTitle("Customer Login");
+		stage.show();
+	}
+	
+	@FXML 
+	public void onClickChemist(ActionEvent e) throws IOException {
+		
+		Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Chemist Login.fxml"));
+		
+		Scene scene = new Scene(root);
+		
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setResizable(false);
+		stage.setTitle("Chemist Login");
 		stage.show();
 	}
 	
