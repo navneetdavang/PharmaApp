@@ -62,9 +62,6 @@ public class CustomerLoginController {
 			}
 		}
 		
-
-		
-		
 	}
 	
 	public void showAlert(String msg, AlertType type) {
