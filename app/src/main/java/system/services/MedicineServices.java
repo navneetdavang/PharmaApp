@@ -65,6 +65,34 @@ public class MedicineServices {
 	}
 	
 	
+	// method to update the medicine in the db
+	public static boolean updateMedicine(Medicine med) {
+		
+		Connection con = ConnectionManager.getConnection();
+		PreparedStatement stmt;
+		
+		try {
+			stmt = con.prepareStatement("UPDATE Medicine SET quantity = ?, price = ? WHERE medicine_name = ?;");
+			stmt.setInt(1, med.getQuantity());
+			stmt.setInt(2, med.getPrice());
+			stmt.setString(3, med.getName());
+			
+			int row_affected = stmt.executeUpdate();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			//  TODO Auto-generated catch block
+			//	e.printStackTrace();
+			System.out.println("Error : Unable to update medicine in db");
+			return false;
+		}
+		
+		return true;
+		
+		
+	}
+	
+	
 	
 	
 }

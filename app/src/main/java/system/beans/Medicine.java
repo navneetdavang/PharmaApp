@@ -39,6 +39,14 @@ public class Medicine {
 		this.price = med.getPrice();
 	
 	}
+	
+	public Medicine(Medicine med) {
+		this.id = med.getId();
+		this.name = med.getName();
+		this.quantity = med.getQuantity();
+		this.price = med.getPrice();
+	
+	}
 
 
 	public int getId() {

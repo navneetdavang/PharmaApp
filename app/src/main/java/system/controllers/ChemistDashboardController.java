@@ -39,6 +39,12 @@ public class ChemistDashboardController implements Initializable {
 	@FXML 
 	private Button add_medicine_btn;
 	
+	@FXML 
+	private Button remove_medicine_btn;
+	
+	@FXML 
+	private Button update_medicine_btn;
+	
 	@FXML
     private TableView<Medicine> medicine_table;
 	
@@ -146,6 +152,35 @@ public class ChemistDashboardController implements Initializable {
 				AlertUtils.showAlert("Unable to Delete the Medicine", AlertType.WARNING).show();
 			}
 			
+		}
+	
+	}
+	
+	// method for onClick Update button
+	@FXML 
+	public void onClickUpdateMedicine(ActionEvent event) throws IOException {
+		System.out.println("Clicked on Update Medicine Button");
+		
+		Medicine med = medicine_table.getSelectionModel().getSelectedItem();
+		
+		
+		// if there is no medicine is selected show the alert
+		if(med == null) {
+			AlertUtils.showAlert("Please select the medicine in the row to update", AlertType.WARNING).show();
+		}else {
+			
+			FXMLLoader loader = new FXMLLoader(App.class.getResource("/system/fxmls/Update Medicine.fxml"));		
+			Parent root = loader.load();
+			UpdateMedicineController controller = loader.getController();
+			controller.setFields(new Medicine(med));
+			
+//			Stage stage = new Stage();
+			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);		
+			stage.setResizable(false);
+			stage.setTitle("Update Medicine");
+			stage.show();
 		}
 		
 		
