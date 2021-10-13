@@ -19,9 +19,9 @@ public class MedicineServices {
 		try {
 			stmt = con.prepareStatement("INSERT INTO Medicine (medicine_name, quantity, price) "
 					+ "VALUES(?,?,?)");
-			stmt.setString(1, med.getMedicineName());
-			stmt.setInt(2, med.getMedicineQuantity());
-			stmt.setInt(3, med.getMediciePrice());
+			stmt.setString(1, med.getName());
+			stmt.setInt(2, med.getQuantity());
+			stmt.setInt(3, med.getPrice());
 			
 			int row_affected = stmt.executeUpdate();
 			stmt.close();

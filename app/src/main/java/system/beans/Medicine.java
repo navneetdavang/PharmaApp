@@ -31,41 +31,52 @@ public class Medicine {
 		this.price = price;
 	}
 	
-	// getters
 	
-	public int getMedicineId() {
-		return this.id;
+	public Medicine(int id, Medicine med) {
+		this.id = -1;
+		this.name = med.getName();
+		this.quantity = med.getQuantity();
+		this.price = med.getPrice();
+	
 	}
-	
-	public String getMedicineName() {
-		return this.name;
+
+
+	public int getId() {
+		return id;
 	}
-	
-	public int getMedicineQuantity() {
-		return this.quantity;
-	}
-	
-	public int getMediciePrice() {
-		return this.price;
-	}
-	
-	
-	//setters
-	
-	public void setMedicineId(int id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public void setMedicineName(String name) {
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void setMedicineQuantity(int quantity) {
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
-	public void setMedicinePrice(int price) {
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return "Med : " + this.name + " " + this.quantity + " " + this.price;
+	}
+	
 	
 }

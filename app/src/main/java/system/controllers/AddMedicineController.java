@@ -1,8 +1,14 @@
 package system.controllers;
 
+import java.io.IOException;
+
+import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -46,9 +52,10 @@ public class AddMedicineController {
 		
 			if(MedicineServices.addMedicine(medicine)) {
 				if(AlertUtils.showAlert("Medicine added Successfully:)", AlertType.INFORMATION)
-						.showAndWait().get() == ButtonType.OK);{
+						.showAndWait().get() == ButtonType.OK){
+					
 					Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-					stage.close();
+					loadChemistDashboard(stage);
 				}
 			}else {
 				AlertUtils.showAlert("Unable to add medicine", AlertType.ERROR).show();
@@ -65,5 +72,24 @@ public class AddMedicineController {
 	}
 	
 	
-	// force the field to be numeric only
+	// method to load the chemist dashboard
+	public void loadChemistDashboard(Stage stage) {
+			
+			try {
+				Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Chemist Dashboard.fxml"));
+			
+			Scene scene = new Scene(root);
+			
+			stage.setScene(scene);
+			stage.setTitle("Medicore");
+			stage.setResizable(false);
+			stage.show();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Error while loading the Chemist Dashboard");
+		}
+		
+	}
+	
 }
