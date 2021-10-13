@@ -124,7 +124,7 @@ public class ChemistDashboardController implements Initializable {
 	}
 	
 	
-	// method to remove medicine
+	// method to remove medicine on click
 	@FXML
 	public void onClickRemoveMedicine(ActionEvent event) {
 		System.out.println("Cliked on Remove Medicine Button");
