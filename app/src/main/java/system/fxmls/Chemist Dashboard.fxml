@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox fx:controller="system.controllers.ChemistDashboardController" maxHeight="700.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="700.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controllers.ChemistDashboardController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="175.0">
         <columnConstraints>
@@ -25,7 +24,7 @@
          <children>
             <AnchorPane prefHeight="340.0" prefWidth="175.0">
                <children>
-                  <Button fx:id="add_medicine_btn" onAction="#onClickAddMedicine" layoutX="31.0" layoutY="65.0" mnemonicParsing="false" text="Add Medicine">
+                  <Button fx:id="add_medicine_btn" layoutX="31.0" layoutY="65.0" mnemonicParsing="false" onAction="#onClickAddMedicine" text="Add Medicine">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -35,11 +34,16 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
+                  <Button fx:id="remove_medicine_btn" onAction="#onClickRemoveMedicine" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" text="Remove Medicine">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="68.0" prefWidth="175.0" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="logout_btn" onAction="#onClickLogout" layoutX="30.0" layoutY="10.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="114.0" text="Log Out">
+                  <Button fx:id="logout_btn" layoutX="30.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickLogout" prefHeight="31.0" prefWidth="114.0" text="Log Out">
                      <font>
                         <Font size="15.0" />
                      </font>
