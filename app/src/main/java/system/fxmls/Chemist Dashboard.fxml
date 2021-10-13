@@ -24,7 +24,7 @@
          <children>
             <AnchorPane prefHeight="340.0" prefWidth="175.0">
                <children>
-                  <Button fx:id="add_medicine_btn" layoutX="31.0" layoutY="65.0" mnemonicParsing="false" onAction="#onClickAddMedicine" text="Add Medicine">
+                  <Button fx:id="add_medicine_btn" layoutX="18.0" layoutY="68.0" mnemonicParsing="false" onAction="#onClickAddMedicine" prefHeight="31.0" prefWidth="139.0" text="Add Medicine">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -34,7 +34,12 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="remove_medicine_btn" onAction="#onClickRemoveMedicine" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" text="Remove Medicine">
+                  <Button fx:id="remove_medicine_btn" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" onAction="#onClickRemoveMedicine" text="Remove Medicine">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="update_medicine_btn" layoutX="18.0" layoutY="174.0" mnemonicParsing="false" onAction="#onClickUpdateMedicine" text="Update Medicine">
                      <font>
                         <Font size="15.0" />
                      </font>
