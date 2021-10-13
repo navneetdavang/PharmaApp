@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -24,6 +25,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import system.beans.Medicine;
 import system.daos.MedicineDao;
+import system.services.MedicineServices;
+import system.utils.AlertUtils;
 
 public class ChemistDashboardController implements Initializable {
 	
@@ -54,8 +57,6 @@ public class ChemistDashboardController implements Initializable {
     
 	ObservableList<Medicine> med_list = FXCollections.observableArrayList();
 	
-
-    
 	
 	@FXML
 	public void onClickLogout(ActionEvent event) {
@@ -121,6 +122,36 @@ public class ChemistDashboardController implements Initializable {
 		}
 				
 	}
+	
+	
+	// method to remove medicine
+	@FXML
+	public void onClickRemoveMedicine(ActionEvent event) {
+		System.out.println("Cliked on Remove Medicine Button");
+		
+		// checking if the user selected the row or not
+		Medicine med = medicine_table.getSelectionModel().getSelectedItem();
+		if(med == null)
+			AlertUtils.showAlert("Please select the medicine in the row to remove", AlertType.WARNING).show();
+		else {
+			
+			if(MedicineServices.deleteMedicine(med)) {
+				try {
+				medicine_table.getItems().removeAll(med);
+				}catch(Exception e) {
+					System.out.println("Error while deleting the row in the gui");
+				}
+				AlertUtils.showAlert("Medicine Deleted Sucessfully:)", AlertType.INFORMATION).show();
+			}else {
+				AlertUtils.showAlert("Unable to Delete the Medicine", AlertType.WARNING).show();
+			}
+			
+		}
+		
+		
+		
+	}
+	
 	
 
 }

@@ -34,6 +34,11 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
+                  <Button fx:id="remove_medicine_btn" onAction="#onClickRemoveMedicine" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" text="Remove Medicine">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="68.0" prefWidth="175.0" GridPane.rowIndex="1">
