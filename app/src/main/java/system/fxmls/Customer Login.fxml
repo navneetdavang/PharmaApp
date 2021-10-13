@@ -32,7 +32,7 @@
       </Button>
       <Text layoutX="43.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Email ID:" wrappingWidth="138.291015625" />
       <Text layoutX="43.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
-      <Button fx:id="login_clear_btn" layoutX="144.0" layoutY="258.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Clear">
+      <Button fx:id="login_clear_btn" onAction="#clearTextField" layoutX="144.0" layoutY="258.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Clear">
          <font>
             <Font size="15.0" />
          </font>
