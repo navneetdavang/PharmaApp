@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import system.beans.Customer;
+import system.controllers.CustomerDashboardController;
 
 public class ViewLoaderUtils {
 
@@ -49,6 +51,33 @@ public class ViewLoaderUtils {
 		
 	}
 
+	
+	// method to load the chemist dashboard
+	public static void loadCustomerDashboard(Stage stage, Customer customer) {
+			
+		try {
+			
+			FXMLLoader loader = new FXMLLoader(App.class.getResource("/system/fxmls/Customer Dashboard.fxml"));
+			Parent root = (Parent) loader.load();
+			
+			CustomerDashboardController controller = loader.getController();
+			controller.setCustomer(customer);
+			
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setTitle("Medicore");
+			stage.setResizable(false);
+			
+			stage.show();
+
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Error while loading the Customer Dashboard");
+		}
+		
+	}
 	
 	
 }

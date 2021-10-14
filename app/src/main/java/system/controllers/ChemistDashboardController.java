@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -27,6 +28,7 @@ import system.beans.Medicine;
 import system.daos.MedicineDao;
 import system.services.MedicineServices;
 import system.utils.AlertUtils;
+import system.utils.ViewLoaderUtils;
 
 public class ChemistDashboardController implements Initializable {
 	
@@ -57,7 +59,6 @@ public class ChemistDashboardController implements Initializable {
     @FXML
     private TableColumn<Medicine, Integer> medicine_stock;
 
-
     @FXML
     private TableColumn<Medicine, Integer> sr_no;
     
@@ -67,22 +68,10 @@ public class ChemistDashboardController implements Initializable {
 	@FXML
 	public void onClickLogout(ActionEvent event) {
 		
-		try {
-			Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Pharmacy Management System.fxml"));
-		
+		if(AlertUtils.showAlert("Do you want to logout?", AlertType.CONFIRMATION)
+				.showAndWait().get() == ButtonType.OK) {
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			
-			Scene scene = new Scene(root);
-			
-			stage.setScene(scene);
-			stage.setResizable(false);
-			stage.show();
-			
-			
-			
-		}catch(Exception except) {
-			except.printStackTrace();
-			System.out.println("Error while loading the Chemist Dashboard");
+			ViewLoaderUtils.loadHomeWindow(stage);
 		}
 		
 	}

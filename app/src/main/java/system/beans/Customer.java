@@ -28,6 +28,12 @@ public class Customer {
 		this.password = password;
 	}
 	
+	// added Copy constructor
+	public Customer(Customer customer) {
+		this.email_id = customer.getEmailId();
+		this.password = customer.getPassword();
+	}
+	
 	public void setFirstName(String first_name) {
 		this.first_name = first_name;
 	}
@@ -62,4 +68,13 @@ public class Customer {
 	public String getPassword() {
 		return password;
 	}
+	
+	
+	// overriding the toString method
+	@Override
+	public String toString() {
+		return this.email_id;
+		
+	}
+	
 }
