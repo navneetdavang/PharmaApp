@@ -45,22 +45,22 @@ public class ChemistLoginController {
 		String username = username_field.getText().trim();
 		String password = password_field.getText().trim();
 		
-//		if(username.equals("") || password.equals("")) {
-//			AlertUtils.showAlert("Please Fill all the Details", AlertType.WARNING).show();
-//		}else {
-//			Chemist chemist = LoginServices.chemistLoginService(username, password);
-//			
-//			if(chemist == null)
-//				AlertUtils.showAlert("Please enter valid Username & Password", AlertType.ERROR).show();
-//			else {
-//				
-//				if(AlertUtils.showAlert("Login Successfully:)", AlertType.INFORMATION).
-//						showAndWait().get() == ButtonType.OK) {;
-//					Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//					loadChemistDashboard(stage);
-//				}
-//			}
-//		}
+		if(username.equals("") || password.equals("")) {
+			AlertUtils.showAlert("Please Fill all the Details", AlertType.WARNING).show();
+		}else {
+			Chemist chemist = LoginServices.chemistLoginService(username, password);
+			
+			if(chemist == null)
+				AlertUtils.showAlert("Please enter valid Username & Password", AlertType.ERROR).show();
+			else {
+				
+				if(AlertUtils.showAlert("Login Successfully:)", AlertType.INFORMATION).
+						showAndWait().get() == ButtonType.OK) {;
+					Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+					loadChemistDashboard(stage);
+				}
+			}
+		}
 		
 		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		loadChemistDashboard(stage);
