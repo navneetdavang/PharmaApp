@@ -60,7 +60,7 @@ public class CustomerLoginController {
 			else {
 				AlertUtils.showAlert("Login Successfully:)", AlertType.INFORMATION).show();
 				Stage stage = (Stage) login_btn.getScene().getWindow();
-				stage.close();
+				loadCustomerDashboard(stage);
 			}
 		}
 		
@@ -79,6 +79,23 @@ public class CustomerLoginController {
 		stage.setResizable(false);
 		stage.setTitle("Chemist Registration");
 		stage.show();
+	}
+	
+	public void loadCustomerDashboard(Stage stage) {
+		try {
+			Parent root = FXMLLoader.load(App.class.getResource("/system/fxmls/Customer Dashboard.fxml"));
+			
+			Scene scene = new Scene(root);
+			
+			stage.setScene(scene);
+			stage.setTitle("Medicore");
+			stage.setResizable(false);
+			stage.show();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Error while loading the Chemist Dashboard");
+		}
 	}
 	
 }
