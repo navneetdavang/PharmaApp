@@ -62,9 +62,8 @@ public class ChemistLoginController {
 			}
 		}
 		
-		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		loadChemistDashboard(stage);
-//		
+//		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+//		loadChemistDashboard(stage);		
 		
 	}
 	
