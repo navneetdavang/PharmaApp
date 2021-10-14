@@ -77,7 +77,7 @@ public class CustomerLoginController {
 		stage.initModality(Modality.APPLICATION_MODAL);
 	
 		stage.setResizable(false);
-		stage.setTitle("Chemist Login");
+		stage.setTitle("Chemist Registration");
 		stage.show();
 	}
 	
