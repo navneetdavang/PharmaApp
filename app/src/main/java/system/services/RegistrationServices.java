@@ -10,7 +10,6 @@ import system.jdbc.ConnectionManager;
 
 public class RegistrationServices {
 	public static Customer customerRegService(String first_name, String last_name, String contact_no, String email_id, String password) {
-		Customer customer = null;
 		
 		Connection con = ConnectionManager.getConnection();
 		PreparedStatement stmt;
@@ -23,24 +22,16 @@ public class RegistrationServices {
             stmt.setString(4, email_id);
             stmt.setString(5, password);
             
-            ResultSet rs = stmt.executeQuery();
-			rs.next();
+            int row_affected = stmt.executeUpdate();
 			
-			if(rs != null) {
-				customer = new Customer(
-						rs.getString("first_name"),
-						rs.getString("last_name"),
-						rs.getString("contact_no"),
-						rs.getString("email_id"),
-						rs.getString("password"));
-			}
-			rs.close();
 			stmt.close();
 			
 		} catch(SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Error while registering the customer");
+			return null;
 		}
 		
-		return customer;
+		return new Customer(first_name, last_name, contact_no, email_id, password);
 	}
 }
