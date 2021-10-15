@@ -191,7 +191,7 @@ public class CustomerDashboardController implements Initializable {
 		int selected_row_idx = medicine_table.getSelectionModel().getSelectedIndex();
 		
 		if(med == null) {
-			AlertUtils.showAlert("Please select the medicine in the row to remove", AlertType.WARNING).show();
+			AlertUtils.showAlert("Please select the medicine in the row to add", AlertType.WARNING).show();
 		}else {
 			
 			String quantity_string = quantity_field.getText().toString().trim();
