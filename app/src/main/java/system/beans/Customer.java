@@ -1,6 +1,7 @@
 package system.beans;
 
 public class Customer {
+	private int id;
 	private String first_name;
 	private String last_name;
 	private String contact_no;
@@ -15,7 +16,11 @@ public class Customer {
 		this.password = "";
 	}
 	
-	public Customer(String email_id, String password) {
+	public Customer(int id, String first_name, String last_name, String contact_no, String email_id, String password) {
+		this.id = id;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.contact_no = contact_no;
 		this.email_id = email_id;
 		this.password = password;
 	}
@@ -30,10 +35,17 @@ public class Customer {
 	
 	// added Copy constructor
 	public Customer(Customer customer) {
+		this.id = customer.getId();
+		this.first_name = customer.getFirstName();
+		this.last_name = customer.getLastName();
+		this.contact_no = customer.getContactNo();
 		this.email_id = customer.getEmailId();
 		this.password = customer.getPassword();
 	}
 	
+
+
+
 	public void setFirstName(String first_name) {
 		this.first_name = first_name;
 	}
@@ -67,6 +79,14 @@ public class Customer {
 	}
 	public String getPassword() {
 		return password;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId() {
+		return this.id;
 	}
 	
 	

@@ -24,6 +24,8 @@ CREATE TABLE Customer(
     password VARCHAR(32)	
 );
 
+SELECT * FROM Customer;
+
 DESC Customer;
 
 CREATE TABLE Medicine(
@@ -33,11 +35,23 @@ CREATE TABLE Medicine(
     price INT
 );
 
+-- UPDATE Medicine SET quantity = 40, price = 80 WHERE medicine_name = 'Paracetemol';
+
 DESC Medicine;
 
 SELECT * FROM Medicine;
 
 TRUNCATE TABLE MEDICINE;
+
+CREATE TABLE Bills(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    cust_id INT NOT NULL,
+    FOREIGN KEY (cust_id) REFERENCES Customer(cust_id),
+	amount INT NOT NULL
+);
+
+DESC Bills;
+INSERT INTO Bills (cust_id, amount) VALUES (1,1000);
 
 
 DROP DATABASE Pharmacy_Management_System;

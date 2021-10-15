@@ -22,7 +22,7 @@ public class MedicineServices {
 			stmt = con.prepareStatement("INSERT INTO Medicine (medicine_name, quantity, price) "
 					+ "VALUES(?,?,?)");
 			stmt.setString(1, med.getName());
-			stmt.setInt(2, med.getQuantity());
+			stmt.setInt(2, med.getStock());
 			stmt.setInt(3, med.getPrice());
 			
 			int row_affected = stmt.executeUpdate();
@@ -73,7 +73,7 @@ public class MedicineServices {
 		
 		try {
 			stmt = con.prepareStatement("UPDATE Medicine SET quantity = ?, price = ? WHERE medicine_name = ?;");
-			stmt.setInt(1, med.getQuantity());
+			stmt.setInt(1, med.getStock());
 			stmt.setInt(2, med.getPrice());
 			stmt.setString(3, med.getName());
 			
@@ -83,6 +83,33 @@ public class MedicineServices {
 		} catch (SQLException e) {
 			//  TODO Auto-generated catch block
 			//	e.printStackTrace();
+			System.out.println("Error : Unable to update medicine in db");
+			return false;
+		}
+		
+		return true;
+		
+		
+	}
+	
+	
+	// update Medicine
+	public static boolean updateMedicine(String med_name, int quantity) {
+		
+		Connection con = ConnectionManager.getConnection();
+		PreparedStatement stmt;
+		
+		try {
+			stmt = con.prepareStatement("UPDATE Medicine SET quantity = quantity - ? WHERE medicine_name = ?;");
+			stmt.setInt(1, quantity);
+			stmt.setString(2, med_name);
+			
+			int row_affected = stmt.executeUpdate();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			//  TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Error : Unable to update medicine in db");
 			return false;
 		}

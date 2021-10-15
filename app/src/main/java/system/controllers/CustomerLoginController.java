@@ -6,6 +6,7 @@ import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
@@ -23,6 +24,9 @@ import system.utils.ViewLoaderUtils;
 
 public class CustomerLoginController {
 
+	@FXML
+	private Hyperlink back_btn;
+	
 	@FXML
 	private Button login_clear_btn;
 	
@@ -46,6 +50,12 @@ public class CustomerLoginController {
 		password_field.clear();
 	}
 	
+	// on click back redirect to homepage
+	@FXML
+	public void onClickBack(ActionEvent e) {
+		ViewLoaderUtils.loadHomeWindow((Stage)((Node)e.getSource()).getScene().getWindow());
+	}
+	
 	@FXML 
 	public void onClickLogin(ActionEvent e) {
 		
@@ -65,7 +75,7 @@ public class CustomerLoginController {
 					Stage stage = (Stage) login_btn.getScene().getWindow();
 					
 					// loading the customer dashboard
-					ViewLoaderUtils.loadCustomerDashboard(stage, new Customer(username, password));
+					ViewLoaderUtils.loadCustomerDashboard(stage, customer);
 				}
 			}
 		}

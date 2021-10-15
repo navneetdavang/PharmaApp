@@ -10,14 +10,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import system.beans.Chemist;
 import system.services.LoginServices;
 import system.utils.AlertUtils;
+import system.utils.ViewLoaderUtils;
 
 public class ChemistLoginController {
+	
+	@FXML
+	private Hyperlink back_btn;
 	
 	@FXML
 	private Button login_clear_btn;
@@ -65,6 +70,13 @@ public class ChemistLoginController {
 //		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 //		loadChemistDashboard(stage);		
 		
+	}
+	
+	
+	// on click back redirect to homepage
+	@FXML
+	public void onClickBack(ActionEvent e) {
+		ViewLoaderUtils.loadHomeWindow((Stage)((Node)e.getSource()).getScene().getWindow());
 	}
 	
 	// method to load the chemist dashboard

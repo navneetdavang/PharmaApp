@@ -103,7 +103,7 @@ public class ChemistDashboardController implements Initializable {
 		// setting the property value for columns
 		sr_no.setCellValueFactory(new PropertyValueFactory<>("id"));
 		medicine_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-		medicine_stock.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+		medicine_stock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 		medicine_price.setCellValueFactory(new PropertyValueFactory<>("price"));
 
 		

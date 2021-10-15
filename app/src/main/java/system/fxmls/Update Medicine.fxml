@@ -31,7 +31,7 @@
          </font>
       </Button>
       <Text layoutX="52.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
-      <TextField id="medicine_quantity" fx:id="medicine_quantity" layoutX="52.0" layoutY="193.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter the Stock">
+      <TextField id="medicine_stock" fx:id="medicine_stock" layoutX="52.0" layoutY="193.0" prefHeight="25.0" prefWidth="224.0" promptText="Enter the Stock">
          <font>
             <Font size="15.0" />
          </font>

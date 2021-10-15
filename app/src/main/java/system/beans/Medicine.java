@@ -2,32 +2,32 @@ package system.beans;
 
 public class Medicine {
 
-	private int id;
-	private String name;
-	private int quantity;
-	private int price;
+	protected int id;
+	protected String name;
+	protected int stock;
+	protected int price;
 	
 	public Medicine() {  	// default constructor
 		this.id = -1;
 		this.name = "";
-		this.quantity = -1;
+		this.stock = -1;
 		this.price = -1;
 	}
 	
 	// constructors for fetching the values for db
-	public Medicine(int id, String name, int quantity, int price) {	
+	public Medicine(int id, String name, int stock, int price) {	
 		this.id = id;
 		this.name = name;
-		this.quantity = quantity;
+		this.stock = stock;
 		this.price = price;
 	}
 	
 	
 	// contructor for inserting the values into db
-	public Medicine(String name, int quantity, int price) {
+	public Medicine(String name, int stock, int price) {
 		this.id = -1;
 		this.name = name;
-		this.quantity = quantity;
+		this.stock = stock;
 		this.price = price;
 	}
 	
@@ -35,7 +35,7 @@ public class Medicine {
 	public Medicine(int id, Medicine med) {
 		this.id = -1;
 		this.name = med.getName();
-		this.quantity = med.getQuantity();
+		this.stock = med.getStock();
 		this.price = med.getPrice();
 	
 	}
@@ -43,7 +43,7 @@ public class Medicine {
 	public Medicine(Medicine med) {
 		this.id = med.getId();
 		this.name = med.getName();
-		this.quantity = med.getQuantity();
+		this.stock = med.getStock();
 		this.price = med.getPrice();
 	
 	}
@@ -65,12 +65,12 @@ public class Medicine {
 		this.name = name;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getStock() {
+		return stock;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 	public int getPrice() {
@@ -83,8 +83,8 @@ public class Medicine {
 
 	@Override
 	public String toString() {
-		return "Med : " + this.name + " " + this.quantity + " " + this.price;
+		return "Med : " + this.name + " " + this.stock + " " + this.price;
 	}
-	
+
 	
 }

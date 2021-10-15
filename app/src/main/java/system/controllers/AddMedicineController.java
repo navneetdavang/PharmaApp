@@ -28,7 +28,7 @@ public class AddMedicineController {
 	private TextField medicine_name; 
 	
 	@FXML
-	public TextField medicine_quantity;
+	public TextField medicine_stock;
 	
 	@FXML
 	private TextField medicine_price;
@@ -40,7 +40,7 @@ public class AddMedicineController {
 	public void onClickAdd(ActionEvent event) {
 		
 		String med_name = medicine_name.getText().toString().trim();
-		String med_quant = medicine_quantity.getText().toString().trim();
+		String med_quant = medicine_stock.getText().toString().trim();
 		String med_price = medicine_price.getText().toString().trim();
 		
 		if(med_name.equals("")|| med_quant.equals("") || med_price.equals("")) {
@@ -68,7 +68,7 @@ public class AddMedicineController {
 	@FXML
 	public void onClickClearFields(ActionEvent event) {
 		this.medicine_name.clear();
-		this.medicine_quantity.clear();
+		this.medicine_stock.clear();
 		this.medicine_price.clear();
 	}
 	

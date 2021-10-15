@@ -61,8 +61,13 @@ public class LoginServices {
 			
 			if(rs != null) {
 				customer = new Customer(
+						rs.getInt("cust_id"),
+						rs.getString("first_name"),
+						rs.getString("last_name"),
+						rs.getString("contact_no"),
 						rs.getString("email_id"),
-						rs.getString("password"));
+						rs.getString("password")
+						);
 			}
 			rs.close();
 			stmt.close();

@@ -68,7 +68,8 @@ public class ViewLoaderUtils {
 			stage.setScene(scene);
 			stage.setTitle("Medicore");
 			stage.setResizable(false);
-			
+			stage.setX(200);
+			stage.setY(100);
 			stage.show();
 
 			
