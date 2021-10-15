@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import system.beans.Medicine;
@@ -21,6 +22,9 @@ import system.utils.ViewLoaderUtils;
 
 public class AddMedicineController {
 
+	@FXML
+	private Hyperlink back_btn;
+	
 	@FXML
 	private Button add_btn;
 	
@@ -63,6 +67,12 @@ public class AddMedicineController {
 			}
 		}
 		
+	}
+	
+	// on click back redirect to chemist dashboard
+	@FXML
+	public void onClickBack(ActionEvent e) {
+		ViewLoaderUtils.loadChemistDashboard(((Stage)((Node)e.getSource()).getScene().getWindow()));
 	}
 	
 	@FXML

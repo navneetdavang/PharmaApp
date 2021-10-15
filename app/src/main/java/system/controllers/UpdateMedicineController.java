@@ -1,16 +1,13 @@
 package system.controllers;
 
-import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import system.beans.Medicine;
 import system.services.MedicineServices;
@@ -18,6 +15,9 @@ import system.utils.AlertUtils;
 import system.utils.ViewLoaderUtils;
 
 public class UpdateMedicineController {
+	
+	@FXML
+	private Hyperlink back_btn;
 	
 	@FXML
 	private Button clear_fields_btn;
@@ -60,6 +60,13 @@ public class UpdateMedicineController {
 				AlertUtils.showAlert("Unable to update medicine", AlertType.ERROR).show();
 			}
 		}
+	}
+	
+
+	// on click back redirect to chemist dashboard
+	@FXML
+	public void onClickBack(ActionEvent e) {
+		ViewLoaderUtils.loadChemistDashboard(((Stage)((Node)e.getSource()).getScene().getWindow()));
 	}
 	
 	@FXML
