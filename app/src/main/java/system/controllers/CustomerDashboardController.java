@@ -313,6 +313,7 @@ public class CustomerDashboardController implements Initializable {
 				if(AlertUtils.showAlert("Payment Done Successfully", AlertType.INFORMATION)
 						.showAndWait().get() == ButtonType.OK) {
 					updateMedicineTable();
+					total_amount_field.setText(0 + "");
 				}
 			}
 		}
