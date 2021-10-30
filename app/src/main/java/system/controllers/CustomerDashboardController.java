@@ -38,6 +38,7 @@ import system.daos.MedicineDao;
 import system.services.BillServices;
 import system.services.MedicineServices;
 import system.utils.AlertUtils;
+import system.utils.ValidationUtils;
 import system.utils.ViewLoaderUtils;
 
 public class CustomerDashboardController implements Initializable {
@@ -120,6 +121,22 @@ public class CustomerDashboardController implements Initializable {
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		//
+
+		// listner for quantity_field
+		quantity_field.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					quantity_field.setText(oldValue);
+				}
+			}
+			
+		});
+		
 		
 		// searching the medicine
 		search_field.textProperty().addListener((observable, oldValue, newValue) -> {

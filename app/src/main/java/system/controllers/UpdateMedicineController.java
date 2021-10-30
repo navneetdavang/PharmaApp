@@ -1,7 +1,13 @@
 package system.controllers;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -12,9 +18,10 @@ import javafx.stage.Stage;
 import system.beans.Medicine;
 import system.services.MedicineServices;
 import system.utils.AlertUtils;
+import system.utils.ValidationUtils;
 import system.utils.ViewLoaderUtils;
 
-public class UpdateMedicineController {
+public class UpdateMedicineController implements Initializable{
 	
 	@FXML
 	private Hyperlink back_btn;
@@ -33,6 +40,36 @@ public class UpdateMedicineController {
 	
 	@FXML
 	private TextField medicine_price;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// medicine_price listner
+		medicine_price.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					medicine_price.setText(oldValue);
+				}
+			}
+			
+		});
+		
+		
+		// medicine_price listner
+		medicine_stock.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					medicine_stock.setText(oldValue);
+				}
+			}
+			
+		});
+	}
 	
 	@FXML
 	public void onClickUpdate(ActionEvent event) {
@@ -80,6 +117,9 @@ public class UpdateMedicineController {
 		medicine_stock.setText(String.valueOf(med.getStock()));
 		medicine_price.setText(String.valueOf(med.getPrice()));
 	}
+
+
+	
 	
 	
 	

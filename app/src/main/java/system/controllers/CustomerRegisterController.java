@@ -1,8 +1,15 @@
 package system.controllers;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
@@ -10,8 +17,9 @@ import system.beans.Customer;
 import system.services.LoginServices;
 import system.services.RegistrationServices;
 import system.utils.AlertUtils;
+import system.utils.ValidationUtils;
 
-public class CustomerRegisterController {
+public class CustomerRegisterController implements Initializable{
 	@FXML
 	private Button reg_btn;
 	
@@ -32,6 +40,92 @@ public class CustomerRegisterController {
 	
 	@FXML
 	private TextField cpassword_field;
+	
+	@FXML
+	private Button clear_btn;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		// listner for first name
+		fname_field.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateName(newValue)) {
+					fname_field.setText(oldValue);
+				}
+			}
+			
+		});
+
+		
+		// listner for last name
+		lname_field.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateName(newValue)) {
+					lname_field.setText(oldValue);
+				}
+			}
+			
+		});
+		
+		// listner for contact field
+		contact_field.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					contact_field.setText(oldValue);
+				}
+			}
+			
+		});
+		
+		// listner for email validation 
+		email_field.focusedProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+				// TODO Auto-generated method stub
+				if(email_field.getText().toString().trim().length() > 0) {
+					if(oldValue) {
+						if(!new ValidationUtils().validateEmail(email_field.getText().toString().trim())) {
+							AlertUtils.showAlert("Invalid Email ID", AlertType.ERROR).show();	
+						}	
+					}
+				}
+				
+			}
+			
+		});
+		
+		
+		// listner for password validation 
+		password_field.focusedProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+				// TODO Auto-generated method stub
+				if(oldValue && password_field.getText().toString().trim().length() > 0) {
+					if(!new ValidationUtils().validatePassword(password_field.getText().toString().trim())) {
+						if(AlertUtils.showAlert("Weak Password", AlertType.WARNING).showAndWait().get()
+								== ButtonType.OK) {
+							password_field.clear();
+						}
+					}	
+				}
+			}
+			
+		});
+		
+
+	}
 	
 	@FXML 
 	public void clearTextField(ActionEvent e) {
@@ -74,4 +168,6 @@ public class CustomerRegisterController {
 		}
 		
 	}
+
+	
 }

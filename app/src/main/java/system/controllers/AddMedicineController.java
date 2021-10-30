@@ -1,14 +1,14 @@
 package system.controllers;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-import application.App;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -18,9 +18,10 @@ import javafx.stage.Stage;
 import system.beans.Medicine;
 import system.services.MedicineServices;
 import system.utils.AlertUtils;
+import system.utils.ValidationUtils;
 import system.utils.ViewLoaderUtils;
 
-public class AddMedicineController {
+public class AddMedicineController implements Initializable{
 
 	@FXML
 	private Hyperlink back_btn;
@@ -39,6 +40,38 @@ public class AddMedicineController {
 	
 	@FXML
 	private Button clear_fields_btn;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// medicine_stock listner
+		medicine_stock.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					medicine_stock.setText(oldValue);
+				}
+			}
+			
+		});
+		
+		// medicine_stock listner
+		medicine_price.textProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				if(!new ValidationUtils().validateContact(newValue)) {
+					medicine_price.setText(oldValue);
+				}
+			}
+			
+		});
+
+
+	}
+	
 	
 	@FXML
 	public void onClickAdd(ActionEvent event) {
@@ -81,6 +114,7 @@ public class AddMedicineController {
 		this.medicine_stock.clear();
 		this.medicine_price.clear();
 	}
+
 	
 	
 	

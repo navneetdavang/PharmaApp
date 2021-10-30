@@ -28,6 +28,13 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.26</version>
 		</dependency>
+		
+		<!-- junit dependacy -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+		</dependency>
 		        
         
     </dependencies>
