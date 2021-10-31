@@ -94,7 +94,7 @@ public class CustomerRegisterController implements Initializable{
 				// TODO Auto-generated method stub
 			
 				if(oldValue) {	
-					if(contact_field.getText().toString().trim().length() < 10) {
+					if(contact_field.getText().toString().trim().length() < 10 && contact_field.getText().toString().trim().length()>=1) {
 						AlertUtils.showAlert("Invalid Contact No.", AlertType.ERROR).show();
 						contact_field.clear();
 					}		
@@ -111,6 +111,7 @@ public class CustomerRegisterController implements Initializable{
 				if(email_field.getText().toString().trim().length() > 0) {
 					if(oldValue) {
 						if(!new ValidationUtils().validateEmail(email_field.getText().toString().trim())) {
+							email_field.clear();
 							AlertUtils.showAlert("Invalid Email ID", AlertType.ERROR).show();	
 						}	
 					}
