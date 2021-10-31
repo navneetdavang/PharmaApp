@@ -8,7 +8,7 @@ import system.beans.Customer;
 import system.services.RegistrationServices;
 
 
-public class customerRegisterTest {
+public class CustomerRegisterTest {
 	
 	
 	// Registering Customer with no credentials  
