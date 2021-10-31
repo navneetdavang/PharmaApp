@@ -31,4 +31,19 @@ public class AdminLoginTest {
 		
 		Assert.assertEquals(null, chemist);
 	}
+	
+	// logging in with no credentials 
+	@Test
+	public void chemistLoginNoCredentials() 
+	{
+		
+		String username = "";
+		String password = "";
+		
+		Chemist chemist = LoginServices.chemistLoginService(username, password);
+		
+		Assert.assertEquals(null,chemist);
+	}
+	
+	
 }
