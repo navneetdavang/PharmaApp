@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class ValidationUtils {
 
 	// REGX for validating the strings
-	private static final String NAME_REGX = "[a-zA-Z]{0,10}";
+	private static final String NAME_REGX = "[a-zA-Z]{0,20}";
 	private static final String EMAIL_REGX = "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
 	private static final String PASSWORD_REGX = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{6,20}$";
 	private static final String CONTACT_NO_REGX = "^\\d{0,10}$";
