@@ -50,6 +50,9 @@ public class MedicineServices {
 			stmt.setString(1, med.getName());
 			
 			int row_affected = stmt.executeUpdate();
+			if(row_affected == 0)
+				return false;
+			
 			stmt.close();
 			
 		} catch (SQLException e) {
