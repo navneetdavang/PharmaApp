@@ -25,8 +25,8 @@ public class CustomerLoginTest {
 		// login test of the customer if user is invalid
 		@Test 
 		public void customerInvalidLoginTest() {
-			String username = "nav@gmail.com";
-			String password = "nav@1234";
+			String username = "abc@gmail.com";
+			String password = "abc@1234";
 			
 			Customer customer = LoginServices.customerLoginService(username, password);
 			

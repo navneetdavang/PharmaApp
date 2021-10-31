@@ -102,6 +102,8 @@ public class MedicineServicesTest {
 		int stock = 100;
 		int price = 10;
 		
+		
+		
 		Random rand = new Random();
 		int new_stock = rand.nextInt(100-10+1)+10;
 		int new_price = rand.nextInt(500-10+1)+10;
@@ -111,7 +113,8 @@ public class MedicineServicesTest {
 		
 		Medicine medicine = new Medicine(medicine_name,stock,price);
 		Medicine medicine2 = new Medicine(medicine_name,new_stock,new_price);
-
+		
+		MedicineServices.deleteMedicine(medicine);
 		boolean isAdded = MedicineServices.addMedicine(medicine);
 		Assert.assertEquals(true, isAdded);
 		

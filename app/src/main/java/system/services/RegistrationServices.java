@@ -9,6 +9,7 @@ import system.beans.Customer;
 import system.jdbc.ConnectionManager;
 
 public class RegistrationServices {
+	
 	public static Customer customerRegService(String first_name, String last_name, String contact_no, String email_id, String password) {
 		
 		Connection con = ConnectionManager.getConnection();
@@ -23,6 +24,8 @@ public class RegistrationServices {
             stmt.setString(5, password);
             
             int row_affected = stmt.executeUpdate();
+            if(row_affected != 1)
+            	return null;
 			
 			stmt.close();
 			
@@ -33,5 +36,29 @@ public class RegistrationServices {
 		}
 		
 		return new Customer(first_name, last_name, contact_no, email_id, password);
+	}
+	
+	public static boolean deleteCustomerRecord(String email_id) {
+		
+		Connection con = ConnectionManager.getConnection();
+		PreparedStatement stmt;
+		
+		try {
+			stmt = con.prepareStatement("DELETE FROM Customer WHERE email_id = ?;");
+			stmt.setString(1, email_id);
+            
+            
+            int row_affected = stmt.executeUpdate();
+            
+			
+			stmt.close();
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("Error while deleting customer");
+			return false;
+		}
+		
+		return true;
 	}
 }
