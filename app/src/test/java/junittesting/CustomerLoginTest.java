@@ -32,4 +32,17 @@ public class CustomerLoginTest {
 			
 			Assert.assertEquals(null, customer);
 		}
+		
+		// logging in with no credentials 
+		@Test
+		public void customerLoginNoCredentials() 
+		{
+			
+			String username = "";
+			String password = "";
+			
+			Customer customer = LoginServices.customerLoginService(username, password);
+			
+			Assert.assertEquals(null,customer);
+		}
 }
