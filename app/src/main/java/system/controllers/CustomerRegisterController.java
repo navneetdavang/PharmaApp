@@ -87,6 +87,21 @@ public class CustomerRegisterController implements Initializable{
 			
 		});
 		
+		contact_field.focusedProperty().addListener(new ChangeListener<>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+				// TODO Auto-generated method stub
+			
+				if(oldValue) {	
+					if(contact_field.getText().toString().trim().length() < 10) {
+						AlertUtils.showAlert("Invalid Contact No.", AlertType.ERROR).show();
+						contact_field.clear();
+					}		
+				}
+			}
+		});
+		
 		// listner for email validation 
 		email_field.focusedProperty().addListener(new ChangeListener<>() {
 
