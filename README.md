@@ -5,7 +5,7 @@
 
 
 ## Customer Login
-![Customer Login](PMS_OutputImages/Customer\ Login.jpeg)
+![Customer Login](PMS_OutputImages/Customer Login.jpeg)
 
 ## Customer Registraion
 ![Customer Registraion](PMS_OutputImages/Customer Registration.jpeg)
