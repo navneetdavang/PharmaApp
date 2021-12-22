@@ -5,19 +5,28 @@
 
 
 ## Admin Login
-![Admin Login](https://user-images.githubusercontent.com/74298809/127672979-bb2726f8-ae31-471f-8e4e-858ebe412489.jpeg)
+![Admin Login](PMS_OutputImages/Admin Login.jpeg)
 
 ## Customer Login
-![Customer Login](https://user-images.githubusercontent.com/74298809/127672979-bb2726f8-ae31-471f-8e4e-858ebe412489.jpeg)
+![Customer Login](PMS_OutputImages/Customer Login.jpeg)
 
 ## Customer Registraion
-![ Customer Registraion](https://user-images.githubusercontent.com/74298809/127673094-032b79a0-2632-4386-aafb-6f27069ea48b.jpeg)
-
+![Customer Registraion](PMS_OutputImages/Customer Registration.jpeg)
+![Customer Registraion 2](PMS_OutputImages/Customer Registration 2.jpeg)
+![Customer Registraion 3](PMS_OutputImages/Customer Registration 3.jpeg)
+![Customer Registraion 4](PMS_OutputImages/Customer Registration 4.jpeg)
+![Customer Registraion 5](PMS_OutputImages/Customer Registration 5.jpeg)
 
 ## Admin's Dashboard
-![Admin's Dashboard](https://user-images.githubusercontent.com/74298809/127673365-4fd0c89a-34da-4c04-9400-b01fe4d0bb2a.jpeg)
+![Admin's Dashboard](PMS_OutputImages/Admin Dashboard.jpeg)
+![Admin's Dashboard 2](PMS_OutputImages/Admin Dashboard 2.jpeg)
+![Admin's Dashboard 3](PMS_OutputImages/Admin Dashboard 3.jpeg)
+
+### Update Medicine 
+![Update Medicine](PMS_OutputImages/Update Medicine.jpeg)
 
 
 ## Customer's Dashboard
-![Customer's Dashboard](https://user-images.githubusercontent.com/74298809/127673292-7e3d25d6-3cdf-431a-8bb1-e7360b90a7fb.jpeg)
+![Customer's Dashboard](PMS_OutputImages/Customer Dashboard.jpeg)
+![Customer's Dashboard 2](PMS_OutputImages/Customer Dashboard 2.jpeg)
 
