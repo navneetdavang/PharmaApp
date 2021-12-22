@@ -1,5 +1,5 @@
-# Pharmacy Management System Desktop Application 
-### (JUnit Testing)
+# Pharmacy Management System Desktop Application (JUnit Testing) 
+
 ## Homepage
 ![Homepage](https://user-images.githubusercontent.com/74298809/127672748-d912a1ea-f9f2-4d83-b274-bdcfee33bd03.jpeg)
 
