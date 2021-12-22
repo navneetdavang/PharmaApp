@@ -1,30 +1,30 @@
 # Pharmacy Management System Desktop Application (JUnit Testing) 
 
 ## Homepage
-![Homepage](PMS_OutputImages/Homepage.jpeg)
+![Homepage](PMS_OutputImages/AppHomepage.jpeg)
 
 
 ## Customer Login
-![Customer Login](PMS_OutputImages/Customer Login.jpeg)
+![Customer Login](PMS_OutputImages/CustomerLogin.jpeg)
 
 ## Customer Registraion
-![Customer Registraion](PMS_OutputImages/Customer Registration.jpeg)
-![Customer Registraion 2](PMS_OutputImages/Customer Registration 2.jpeg)
-![Customer Registraion 3](PMS_OutputImages/Customer Registration 3.jpeg)
-![Customer Registraion 4](PMS_OutputImages/Customer Registration 4.jpeg)
-![Customer Registraion 5](PMS_OutputImages/Customer Registration 5.jpeg)
+![Customer Registraion](PMS_OutputImages/CustomerRegistration.jpeg)
+![Customer Registraion 2](PMS_OutputImages/CustomerRegistration2.jpeg)
+![Customer Registraion 3](PMS_OutputImages/CustomerRegistration3.jpeg)
+![Customer Registraion 4](PMS_OutputImages/CustomerRegistration4.jpeg)
+![Customer Registraion 5](PMS_OutputImages/CustomerRegistration5.jpeg)
 
 ## Admin's Dashboard
-![Admin's Dashboard](PMS_OutputImages/Admin Dashboard.jpeg)
-![Admin's Dashboard 2](PMS_OutputImages/Admin Dashboard 2.jpeg)
-![Admin's Dashboard 3](PMS_OutputImages/Admin Dashboard 3.jpeg)
+![Admin's Dashboard](PMS_OutputImages/AdminDashboard.jpeg)
+![Admin's Dashboard 2](PMS_OutputImages/AdminDashboard 2.jpeg)
+![Admin's Dashboard 3](PMS_OutputImages/AdminDashboard 3.jpeg)
 
 ### Update Medicine 
-![Update Medicine](PMS_OutputImages/Update Medicine.jpeg)
+![Update Medicine](PMS_OutputImages/UpdateMedicine.jpeg)
 
 
 ## Customer's Dashboard
-![Customer's Dashboard](PMS_OutputImages/Customer Dashboard.jpeg)
-![Customer's Dashboard 2](PMS_OutputImages/Customer Dashboard 2.jpeg)
+![Customer's Dashboard](PMS_OutputImages/CustomerDashboard.jpeg)
+![Customer's Dashboard 2](PMS_OutputImages/CustomerDashboard2.jpeg)
 
 
