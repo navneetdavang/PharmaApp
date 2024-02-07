@@ -1,5 +1,5 @@
-# Pharmacy Management System Desktop Application
-
+# PharmaApp:
+A Desktop Application for a pharmacy where a chemist can manage the inventory and orders
 ## Technology: 
 Java, JavaFx, SceneBuilder, MySQL, JUnit
 
