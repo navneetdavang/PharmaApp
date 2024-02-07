@@ -1,4 +1,4 @@
-# Pharmacy Management System Desktop Application (JUnit Testing) 
+# Pharmacy Management System Desktop Application
 
 ## Homepage
 ![Homepage](PMS_OutputImages/AppHomepage.jpeg)
