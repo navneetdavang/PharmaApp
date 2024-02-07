@@ -1,5 +1,8 @@
 # Pharmacy Management System Desktop Application
 
+## Technology: 
+Java, JavaFx, SceneBuilder, MySQL, JUnit
+
 ## Homepage
 ![Homepage](PMS_OutputImages/AppHomepage.jpeg)
 
